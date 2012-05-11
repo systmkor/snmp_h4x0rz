@@ -1,15 +1,26 @@
 %Team Ramrod
 
 
-\documentclass[11pt]{article}
+\documentclass[pdftex, 11pt]{article}
 
 \usepackage{setspace}
+\usepackage[pdftex]{graphicx}
 %\usepackage{url}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 %%\setlength{\textheight}{9in}
 %%\setlength{\textwidth}{6in}
-\setlength{\oddsidemargin}{.25in}
-\setlength{\topmargin}{-.5in}  % changed from -.25 by RSR on 1/21/07
+
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+
+%\setlength{\oddsidemargin}{.25in}
+%\setlength{\topmargin}{-.5in}  % changed from -.25 by RSR on 1/21/07
 
 \hyphenation{itself}
 
@@ -22,8 +33,9 @@
 
 \singlespace
 
-\maketitle
+\input{./title.tex}
 
+\pagebreak
 
 \setcounter{secnumdepth}{2}
 
@@ -82,6 +94,12 @@ In this project, we hope to create a network involving 3 autonomous
 systems [see figure].  We will configure a middle AS as a transit   %% add figure link
 network, and run a VPN between the other two through it.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\textwidth, scale=1]{./figures/NetworkTopology.png}
+  \caption{Proposed Network Topology}
+\end{figure}
+
 \subsection{SNMP}
 Over this VPN, we will run the SNMP protocol, which has known 
 implementation vulnerabilities as of SNMPv3. On the “IT” AS, we will 
@@ -106,6 +124,7 @@ the “ISP” AS and other external locations.
   May 29 & Write-Up, Poster, \& Demo Completed \\
 \end{tabular}
 \end{center}
+
 
 
 
