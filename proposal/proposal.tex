@@ -32,48 +32,24 @@
 
 \setcounter{secnumdepth}{2}
 
-\section{Goals}
-We hope to demonstrate a known vulnerability of Simple Network Management 
-Protocol (SNMP) over multiple anonymous systems.  As SNMP is commonly used 
-to manage complex network resources, maintaining such a system is something 
-that a small company may wish to outsource to a third party IT company.  
-This company would likely have a direct VPN to access the SNMP servers and 
-clients running on the remote system, which we will emulate as described below. 
-The goal of this project is to highlight the insecurites of the SNMP protocol,
-its common configurations and its negative effects of being a part of 
-management systems (.e.g a hardware management system).
+\section{Scenario}
+As SNMP is commonly used to manage complex network resources, maintaining 
+such a system is something that a small company may wish to outsource to a 
+third party IT company.  This company would likely have a direct VPN to 
+access the SNMP servers and clients running on the remote system, which we 
+will emulate as described below. The goal of this project is to highlight 
+the insecurites of the SNMP protocol, its common configurations and its 
+negative effects of being a part of management systems 
+(.e.g a hardware management system).
 
-\section{Deliverables}
+\section{Goal}
+We plan to implement a proof of concept of a known  Simple Network Management 
+Protocol (SNMP) vulnerability over multiple anonymous systems. If there is enough time
+we would like to find and implement a SNMP vulnerability of our own.
 
-\begin{itemize}
-\item Poster
-  \subitem Abstract of final process
-  \subitem Evaluation of attack successes, failures, and limitations
-  \subitem Final network topology map (physical and logical)
-  \subitem Genearl description of our process and methods
-
-\item Demo
-  \subitem Fully running version of the network topology %link to figure example
-  \subitem Visual presentation of the results of several attacks
-
-\item Write-Up
-  \subitem Goals
-  \subitem What we completed
-  \subitem Dummy Corporate Network Explanation
-  \subitem Explenation of SNMP Attacks
-  \subitem How our tools were designed and how they work
-  \subitem Network Configuration
-
-\item Network Configuration
-  \subitem Configuration files from each router
-  \subitem Final Logical Network Topology
-  \subitem Final Real Network Topology
-
-\item SNMP Attack Tools
-  \subitem SNMP tools that take advantage of SNMPv3  vulnerabilities
-  \subitem Provide the source code for said tools
-
-\end{itemize}
+\section{Known SNMP Vulnerability} %WE NEED AN ACTUALLY KNOWN SNMP vuln
+What the SNMP vulnerability is. 
+Where we found it.
 
 \section{Setup and Logistics}
 In an overal structure for the completition of this project
@@ -106,6 +82,38 @@ attacks from several topological locations in our network.  The most
 obvious first place to try would be in either the “Client” or “IT” AS; 
 however, we would also like to show results for attempts made from 
 the “ISP” AS and other external locations.
+
+\section{Deliverables}
+
+\begin{itemize}
+\item Poster
+  \subitem Abstract of final process
+  \subitem Evaluation of attack successes, failures, and limitations
+  \subitem Final network topology map (physical and logical)
+  \subitem Genearl description of our process and methods
+
+\item Demo
+  \subitem Fully running version of the network topology %link to figure example
+  \subitem Visual presentation of the results of several attacks
+
+\item Write-Up
+  \subitem Goals
+  \subitem What we completed
+  \subitem Dummy Corporate Network Explanation
+  \subitem Explenation of SNMP Attacks
+  \subitem How our tools were designed and how they work
+  \subitem Network Configuration
+
+\item Network Configuration
+  \subitem Configuration files from each router
+  \subitem Final Logical Network Topology
+  \subitem Final Real Network Topology
+
+\item SNMP Attack Tools
+  \subitem SNMP tools that take advantage of SNMPv3  vulnerabilities
+  \subitem Provide the source code for said tools
+
+\end{itemize}
 
 \section{Deadlines}
 
