@@ -5,12 +5,19 @@
 
 \usepackage{setspace}
 \usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
 %\usepackage{url}
+\usepackage[usenames, table]{xcolor}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 %%\setlength{\textheight}{9in}
 %%\setlength{\textwidth}{6in}
+
+\hypersetup {
+  colorlinks=true,
+  urlcolor=gray
+}
 
 \addtolength{\oddsidemargin}{-0.375in}
 \addtolength{\evensidemargin}{0.375in}
@@ -33,35 +40,49 @@
 \setcounter{secnumdepth}{2}
 
 \section{Scenario}
-As SNMP is commonly used to manage complex network resources, maintaining 
-such a system is something that a small company may wish to outsource to a 
-third party IT company.  This company would likely have a direct VPN to 
-access the SNMP servers and clients running on the remote system, which we 
-will emulate as described below. The goal of this project is to highlight 
-the insecurites of the SNMP protocol, its common configurations and its 
-negative effects of being a part of management systems 
-(.e.g a hardware management system).
+As Simple Network Management Protocol (SNMP) is commonly used to manage complex 
+network resources, maintaining such a system is something that a small company 
+may wish to outsource to a third party IT company.  This company would likely 
+have a direct VPN to access the SNMP servers and clients running on the remote 
+system, which we  will emulate as described below. The goal of this project 
+is to highlight the insecurites of the SNMP protocol, its common configurations 
+and its negative effects of being a part of management systems 
+(e.g. a hardware management system.)
 
 \section{Goal}
-We plan to implement a proof of concept of a known  Simple Network Management 
-Protocol (SNMP) vulnerability over multiple anonymous systems. If there is enough time
-we would like to find and implement a SNMP vulnerability of our own.
+We plan to implement a proof of concept of a known Simple Network Management 
+Protocol vulnerability over multiple atonomous systems. If there is enough time
+we would like to find and implement a SNMP vulnerability of our own. We may attack
+a different SNMPv3 vulnerability if our initially intended vulnerability does not work out.
 
-\section{Known SNMP Vulnerability} %WE NEED AN ACTUALLY KNOWN SNMP vuln
-What the SNMP vulnerability is. 
-Where we found it.
+\section{HMAC - Known SNMP Vulnerability}
+SNMP, as of 2008, has a known bug with several implementations involving its use 
+of a cryptographic-hash based authentication system (HMAC).  While this issue was 
+patched in some implementations, non-updated systems and systems with certain 
+software may still have this vulnerability.  Because the HMAC calculates an 
+authentication code that may be as small as 1 byte, a process can quickly 
+brute-force a code, and then produce traps to both read and modify any visible 
+SNMP objects.
+\\
+
+\noindent The details of this weakness are outlined in the following articles
+\begin{itemize}
+\item \url{http://www.cisco.com/en/US/products/csa/cisco-sa-20080610-snmpv3.html}
+\item \url{http://www.cert.org/advisories/CA-2002-03.html}
+\end{itemize}
+
 
 \section{Setup and Logistics}
 In an overal structure for the completition of this project
 we will need 3 main factors to be able to complete the project.
-We need the Network setup, SNMP Servers and Clients and the
-our written tools to actively exploit the vulnerabilities in
+We need the Network setup, SNMP servers and clients and 
+our tools to actively exploit the vulnerabilities in
 SNMP.
 
 \subsection{Network}
 In this project, we hope to create a network involving 3 autonomous 
-systems [see figure].  We will configure a middle AS as a transit   %% add figure link
-network, and run a VPN between the other two through it.
+systems \emph{Figure 1}.  We will configure a middle AS as a transit  %% add figure link
+network, and run a VPN between the other two autonomous systems.
 
 \begin{figure}
   \centering
@@ -74,7 +95,7 @@ Over this VPN, we will run the SNMP protocol, which has known
 implementation vulnerabilities as of SNMPv3. On the “IT” AS, we will 
 run a server tasked with managing resources of the devices on our 
 “Client” AS.  These resources will probably be things such as ink 
-levels in a printer, or other easy to generate resources.
+levels in a printer, or other easy to monitor resources.
 
 \subsection{Attacks}
 When we attempt to exploit SNMP vulnerabilities, we will perform our 
@@ -90,23 +111,24 @@ the “ISP” AS and other external locations.
   \subitem Abstract of final process
   \subitem Evaluation of attack successes, failures, and limitations
   \subitem Final network topology map (physical and logical)
-  \subitem Genearl description of our process and methods
+  \subitem General description of our process and methods
 
 \item Demo
   \subitem Fully running version of the network topology %link to figure example
-  \subitem Visual presentation of the results of several attacks
+  \subitem Fully running SNMPv3 servers and clients
+  \subitem Visual presentation of the results of the attacks
 
 \item Write-Up
   \subitem Goals
   \subitem What we completed
-  \subitem Dummy Corporate Network Explanation
-  \subitem Step-by-Step Explenation of SNMP Attacks
+  \subitem Dummy corporate network in-depth explanation
+  \subitem Step-by-Step explenation of SNMP Attacks
   \subitem How our tools were designed and how they work
   \subitem Network Configuration
 
 \item Network Configuration
   \subitem Configuration files from each router
-  \subitem Executed Commands Source
+  \subitem Script of executed commands
   \subitem Final Logical Network Topology
   \subitem Final Real Network Topology
 
@@ -117,6 +139,7 @@ the “ISP” AS and other external locations.
 \end{itemize}
 
 \section{Deadlines}
+\textit{All deadlines are tentative.}
 
 \begin{center}
 \begin{tabular}{l l}
