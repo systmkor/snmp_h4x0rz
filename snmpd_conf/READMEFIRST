@@ -1,0 +1,27 @@
+username: 
+ramrod
+authpass:
+calpoly1
+whateverelse:
+calpoly1
+
+
+As far as I can tell, when I set the servers up, things are being set.
+However, currently the only things being monitored are
+/home/ramrod/sizefile
+the bash process (which doesnt seem to work)
+
+Note you have to adjust the arch linux settings
+
+
+
+Note that you will have to change IP addresses.
+This file is intended for the /usr/share/snmp directory of the archlinux 
+client.
+ALSO.
+If the user is not initialized:
+1: Stop the running snmpd
+2: Remove all text from /var/net-snmp/snmpd.conf
+3: Add the line "createUser ramrod MD5 calpoly1 DES calpoly1"
+
+Thats all I can currently think of. Goodnight, and good luck.
