@@ -1,0 +1,13 @@
+This file describes sniff_and_spew.py and cappy.py
+
+First, we run cappy.py.
+Next, we perform an snmpget over this network.
+Next, we close cappy.py.
+Next we should open wireshark, start a capture, and run
+sniff_and_spew.py.
+Finally, we can see the response packet in Wireshark.
+
+Since it already formats it, I didn't see a reason to reduplicate this effor.t
+
+
+So yeah, thats about it. Keep in mind IP's may need to change. ETC.
