@@ -16,14 +16,13 @@ msg = ''
 digest = ''
 curr_digest = ''
 
-#libpcap
+def dict_krak(msg='', digest='', pass_dict=''):
+  for line in open(pass_dict, 'r')
+    if hmac.new(key=line, msg).hexdigest() == digest:
+      print line
 
+def print_password(passwd='', pathname='', stdout=True):
+  
+  if stdout:
+    print(passwd)
 
-for line in open(pass_dict, 'r')
-  a = hmac.new(key=line, msg)
-  if a.hexdigest() == digest:
-    print line
-#compare keys
-#if keys are identical
-#print the original and the dictionary key
-#print the dictionary password
